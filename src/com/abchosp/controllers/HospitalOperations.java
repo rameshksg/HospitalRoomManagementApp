@@ -135,9 +135,9 @@ public class HospitalOperations {
         for(Entry<Integer, Room> entryOfRoom : mapOfRooms.entrySet()) {
         	if(entryOfRoom.getKey() != null && entryOfRoom.getValue() != null)
         		if(entryOfRoom.getValue().getPatientId() != -1)
-        			System.out.println(entryOfRoom.getKey() + " - Occupied by patient id : " + entryOfRoom.getValue().getPatientId());
+        			System.out.println("Room " + entryOfRoom.getKey() + " - Occupied by patient id : " + entryOfRoom.getValue().getPatientId());
         		else
-        			System.out.println(entryOfRoom.getKey() + " - Not Occupied i.e., Available ");
+        			System.out.println("Room " + entryOfRoom.getKey() + " - Not Occupied i.e., Available ");
         }
         System.out.println("--------");
         System.out.println("");
@@ -195,6 +195,7 @@ public class HospitalOperations {
         } 
         
         Room oldRoom = patient.getRoomAssigned();
+        oldRoom.setPatientId(-1);
         patient.setRoomAssigned(newRoom);
         newRoom.setPatientId(patientId);
         System.out.println("Patient " + patient.getPatientName() + " shifted from Room " + 
@@ -256,6 +257,8 @@ public class HospitalOperations {
         System.out.println("--------");
 		System.out.println("");
         
+		printAllRoomsAndTheirStatuses();
+		
         // Shift patient to new room, and assign doctor to new room
         if(arrAllAvailableRooms.length >= 3 && arrAllAvailableRooms[2] != null){
         	shiftPatientRoom(patientId2, arrAllAvailableRooms[2].getRoomId());
@@ -265,5 +268,6 @@ public class HospitalOperations {
 		System.out.println("");
 
 
+		printAllRoomsAndTheirStatuses();
 	}
 }
