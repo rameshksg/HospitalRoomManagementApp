@@ -19,7 +19,7 @@ import com.abchosp.entities.SequenceGenerator;
  * 4.Get Room info by using doctorId
  * 5.Get Room info by using patientId
  * 6.Shift Room for a patient
- * zip it 	upload to google drive and send to	doraa@labcorp.com
+ * 
  * 
 */
 

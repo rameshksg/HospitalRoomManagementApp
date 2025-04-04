@@ -35,8 +35,5 @@ public class Room {
 	}
 	 
 
-//	zip it 
-//	upload to google drive
-//	doraa@labcorp.com
 
 }
